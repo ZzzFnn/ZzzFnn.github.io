@@ -1,6 +1,7 @@
 ---
-title: Welcome to Quartz
+title: 书写意义
+date: June 22, 2026
 ---
 
-This is a blank Quartz installation.
-See the [documentation](https://quartz.jzhao.xyz) for how to get started.
+未来如果有人和我拥有一样的思想，那就是另一个我。那么对于我来说最有价值的事情就是：为不让未来的我经受我现在经受的痛苦而奋斗。
+
