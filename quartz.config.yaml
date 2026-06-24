@@ -44,7 +44,7 @@ plugins:
   - source: github:quartz-community/created-modified-date
     enabled: true
     options:
-      defaultDateType: published
+      defaultDateType: modified
       priority:
         - frontmatter
         - git
@@ -144,27 +144,6 @@ plugins:
     enabled: true
   - source: github:quartz-community/explorer
     enabled: true
-      options:
-    sortFn: |
-      (a, b) => {
-        if (a.isFolder !== b.isFolder) {
-          return a.isFolder ? -1 : 1
-        }
-
-        if (!a.isFolder && !b.isFolder) {
-          const aTime = Date.parse(String(a.data?.date ?? ""))
-          const bTime = Date.parse(String(b.data?.date ?? ""))
-
-          if (!Number.isNaN(aTime) && !Number.isNaN(bTime) && aTime !== bTime) {
-            return bTime - aTime
-          }
-        }
-
-        return (a.displayName || "").localeCompare(b.displayName || "", undefined, {
-          numeric: true,
-          sensitivity: "base",
-        })
-      }
     layout:
       position: left
       priority: 50
