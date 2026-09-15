@@ -6,8 +6,8 @@ configuration:
   enablePopovers: true
   analytics:
     provider: plausible
-  locale: en-US
-  baseUrl: mysite.github.io
+  locale: zh-CN
+  baseUrl: zzzfnn.github.io
   ignorePatterns:
     - private
     - templates
@@ -72,6 +72,7 @@ plugins:
     enabled: true
     order: 50
     layout:
+      condition: not-index
       position: right
       priority: 30
   - source: github:quartz-community/crawl-links
@@ -156,6 +157,7 @@ plugins:
       globalGraph:
         showTags: false
     layout:
+      condition: not-index
       position: right
       priority: 10
   - source: github:quartz-community/search
@@ -169,6 +171,7 @@ plugins:
   - source: github:quartz-community/backlinks
     enabled: true
     layout:
+      condition: not-index
       position: right
       priority: 50
   - source: github:quartz-community/article-title
@@ -179,6 +182,7 @@ plugins:
   - source: github:quartz-community/content-meta
     enabled: true
     layout:
+      condition: not-index
       position: beforeBody
       priority: 20
   - source: github:quartz-community/tag-list
@@ -200,11 +204,14 @@ plugins:
   - source: github:quartz-community/reader-mode
     enabled: true
     layout:
+      condition: not-index
       position: left
       priority: 35
       group: toolbar
   - source: github:quartz-community/breadcrumbs
     enabled: true
+    options:
+      rootName: 首页
     layout:
       position: beforeBody
       priority: 5
@@ -221,8 +228,21 @@ plugins:
     enabled: true
     options:
       links:
-        GitHub: https://github.com/jackyzha0/quartz
-        Discord Community: https://discord.gg/cRFFHYye7t
+        关于这里: https://zzzfnn.github.io/#about
+        GitHub: https://github.com/ZzzFnn
+        RSS订阅: https://zzzfnn.github.io/index.xml
+  - source: ./plugins/home-recent
+    enabled: true
+    options:
+      summaries:
+        008_资本主义现实主义的力量来源: 从马克·费舍尔《资本主义现实主义》中的一句话出发，留下一个关于想象力的思考起点。
+        007_对科研行业的组织结构的思考（二）: 为什么知识生产者更习惯把自己看作研究者，而不是劳动者？从科研发文、身份认同与劳动关系谈起。
+        005_现代资本主义与孤独社会: 当人与人的关系越来越成为身份与功能的关系，孤独如何成为日常？试着从生活的“外部性”理解这一问题。
+        006_对生活的反思一——转第一篇公众号文章: 从求学与工作的生活经验出发，反思主体性如何流失，以及缩短劳动时间为何值得争取。
+        004_重观《肖申克的救赎》——对“监狱”概念的新解: Andy为什么选择在海边开始新的生活？重看《肖申克的救赎》，追问监狱、规训与自由的含义。
+    layout:
+      position: afterBody
+      priority: 10
   - source: github:quartz-community/recent-notes
     enabled: false
   - source: github:quartz-community/spacer
@@ -250,6 +270,7 @@ plugins:
       language: yaml
     order: 5
     layout:
+      condition: not-index
       position: beforeBody
       priority: 15
       display: all
