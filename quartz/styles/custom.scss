@@ -1,3 +1,99 @@
 @use "./variables.scss" as *;
 
-// put your custom CSS here!
+body[data-slug="index"] {
+  .page {
+    max-width: 1160px;
+  }
+  .page > #quartz-body {
+    grid-template-columns: 280px minmax(0, 1fr);
+    grid-template-areas:
+      "grid-sidebar-left grid-header"
+      "grid-sidebar-left grid-center"
+      "grid-sidebar-left grid-footer";
+    column-gap: 40px;
+    padding-right: 40px;
+
+    > .sidebar.right {
+      display: none;
+    }
+    .page-header {
+      margin-bottom: 1.5rem;
+    }
+    .article-title {
+      font-size: 2.4rem;
+      letter-spacing: 0.04em;
+    }
+  }
+  .home-introduction {
+    line-height: 2;
+    scroll-margin-top: 2rem;
+    p {
+      margin: 0 0 1.25rem;
+    }
+    p:first-child {
+      font-size: 1.08rem;
+      color: var(--dark);
+    }
+    p:last-child {
+      color: var(--darkgray);
+    }
+  }
+  .home-recent {
+    margin-top: 3rem;
+    h2 {
+      font-size: 1.25rem;
+      margin: 0 0 0.5rem;
+    }
+  }
+  .recent-articles {
+    list-style: none;
+    padding: 0;
+    margin: 0;
+    > li {
+      padding: 1.6rem 0;
+      border-bottom: 1px solid var(--lightgray);
+    }
+    time {
+      font-size: 0.85rem;
+      color: var(--darkgray);
+    }
+    h3 {
+      margin: 0.5rem 0 0.6rem;
+      font-size: 1.15rem;
+      line-height: 1.65;
+    }
+    a.internal {
+      background: none;
+      padding: 0;
+      border-radius: 0;
+    }
+    p {
+      margin: 0;
+      line-height: 1.85;
+      font-size: 0.95rem;
+    }
+  }
+  footer {
+    margin-top: 2.5rem;
+    padding-bottom: 2rem;
+  }
+
+  @media all and ($mobile) {
+    .page > #quartz-body {
+      grid-template-columns: minmax(0, 1fr);
+      grid-template-areas: "grid-sidebar-left" "grid-header" "grid-center" "grid-footer";
+      padding: 0 1.25rem;
+      column-gap: 0;
+      .page-header {
+        margin-top: 2rem;
+        margin-bottom: 1.25rem;
+      }
+      .article-title {
+        font-size: 2rem;
+      }
+    }
+    .home-recent {
+      margin-top: 2.25rem;
+    }
+  }
+}
