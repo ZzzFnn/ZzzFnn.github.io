@@ -79,7 +79,7 @@ export function MonthlyExplorer() {
     return h(
       "details",
       { class: ["monthly-explorer", displayClass].filter(Boolean).join(" "), open: true },
-      h("summary", { class: "monthly-explorer-title" }, "Explorer"),
+      h("summary", { class: "monthly-explorer-title" }, "按月归档"),
       h(
         "nav",
         { class: "month-groups", "aria-label": "按年月浏览文章" },
